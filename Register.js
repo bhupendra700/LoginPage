@@ -8,6 +8,7 @@ const Register = () => {
         loginform()
         logingreetBox()
         signupform()
+        signupgreetBox()
     },[])
 
   return (
