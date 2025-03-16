@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../CSS/Login.css";
+import "../CSS/Register.css";
 import {
   loginform,
   logingreetBox,
