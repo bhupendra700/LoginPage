@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+:root{
+    --primary: #7c68ee;
+    --secondary: #fff;
+    --tertairy: #e5eeff;
+}
 *{
     margin: 0;
     padding: 0;
@@ -11,13 +16,12 @@
 body{
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(to right, #fff, #7c68ee);
+    background: linear-gradient(to right, var(--secondary), var(--primary));
 }
 
 .login-signup-box{
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(1px);
     align-content: center;
     place-content: center;
@@ -41,9 +45,7 @@ body{
     width: 350px;
     padding: 25px;
     border-radius: 0 100px 70px 0;
-    background-image: url(bg.jpg);
-    background-size: cover;
-    background-position: center;
+    background-color: var(--primary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,6 +66,7 @@ body{
 
 .usergreet .login-greet-box p, .signup-greet-box p{
     text-align: center;
+    font-size: 15px !important;
 }
 
 .usergreet .login-greet-box button, .signup-greet-box button{
@@ -71,13 +74,15 @@ body{
     padding: 3px 15px;
     border-radius: 5px;
     border: 2px solid #7c68ee;
-    background-color: #7c68ee;
-    color: #fff;
+    background-color: var(--secondary);
+    color: var(--primary);
     cursor: pointer;
     transition: all 0.2s;
 }
 
 .usergreet .login-greet-box button:hover, .signup-greet-box button:hover{
+    outline: 2px solid var(--secondary);
+    /* outline-offset: 2px; */
     
 }
 
@@ -89,7 +94,6 @@ body{
     width: 300px;
     padding: 8px;
     position: relative;
-    /* background-image: url(bg.jpg); */
 }
 
 .forms .close-btn{
@@ -128,8 +132,8 @@ body{
 }
 
 .chng-form .hover-chngbtn{
-    background-color: #e5eeff;
-    color: #3062d4;
+    background-color: var(--tertairy);
+    color: var(--primary);
     font-weight: bold;
 }
 
@@ -194,6 +198,7 @@ body{
     margin-top: 6px;
    display: flex;
    align-items: center;
+   font-size: 15px !important;
 }
 
 .mtd .or .line{
@@ -221,6 +226,7 @@ body{
     font-size: 14px;
     cursor: pointer;
     text-wrap: nowrap;
+    color: #000 !important;
 }
 
 .mtd-btn .login-google-btn:hover, .login-github-btn:hover, .login-apple-btn:hover{
@@ -285,7 +291,7 @@ body{
     padding: 5px;
     border: 0;
     border-radius: 5px;
-    background-color: #3062d4;
+    background-color: var(--primary);
     color: white;
     font-size: 15px;
     cursor: pointer;
@@ -321,6 +327,7 @@ body{
     font-size: 14px;
     cursor: pointer;
     text-wrap: nowrap;
+    color: #000 !important;
 }
 
 .mtd-btn .signup-google-btn:hover, .signup-github-btn:hover, .signup-apple-btn:hover{
@@ -329,11 +336,6 @@ body{
 }
 
 @media (max-width:660px) {
-    body {
-        background-image: url(background1.jpg);
-        background-size: cover;
-        background-position: center;
-    }
 
     .main-form {
         width: 300px;
