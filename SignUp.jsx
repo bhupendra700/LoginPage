@@ -30,6 +30,7 @@ const SignUp = () => {
 
       await signOut(auth);
       setLoader(false);
+      setSignUp({ name: "", email: "", password: "" })
     } catch (error) {
       console.log(error.message);
       setLoader(false);
