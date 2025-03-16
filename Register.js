@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
-import '../../CSS/adminCSS/Login.css'
-import { loginform , logingreetBox , signupform , signupgreetBox } from '../../Function/LoginFunc'
+import React, { useEffect, useState } from 'react'
+import '../CSS/Login.css'
+import { loginform , logingreetBox , signupform , signupgreetBox } from '../Function/Register'
+import ForgotPassword from './ForgotPassword'
 
 const Register = () => {
 
@@ -11,7 +12,13 @@ const Register = () => {
         signupgreetBox()
     },[])
 
+    let [login , setLogin] = useState({email:"" , password: ""})
+    let [signup , setSignUp] = useState({name: "" , email:"" , password: ""})
+    let [ShowForgetPass, setShowForgetPass] = useState(false);
+    
+
   return (
+    <>
     <div className="login-signup-box">
     <div className="main-form">
       <section className="usergreet">
@@ -79,7 +86,10 @@ const Register = () => {
               required=""
             />
           </div>
-          <a href="#" className="forgot-pwd">
+          <a href="#" className="forgot-pwd" onClick={(e)=>{
+            e.preventDefault()
+            setShowForgetPass(!ShowForgetPass)
+          }}>
             Forgot Password?
           </a>
           <button type="submit" className="login-submit-btn">
@@ -104,6 +114,7 @@ const Register = () => {
             </div>
           </div>
         </form>
+
         <form className="signup-box hide-form" autoComplete="off">
           <div className="signup-name-box">
             <label htmlFor="signup-username">
@@ -163,6 +174,14 @@ const Register = () => {
       </section>
     </div>
   </div>
+  {ShowForgetPass && (
+        <ForgotPassword
+          setShowForgetPass={setShowForgetPass}
+          ShowForgetPass={ShowForgetPass}
+        />
+      )}
+  </>
+
   )
 }
 
