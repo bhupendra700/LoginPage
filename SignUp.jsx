@@ -31,6 +31,7 @@ const SignUp = () => {
       await signOut(auth);
       setLoader(false);
       setSignUp({ name: "", email: "", password: "" })
+      logingreetBox();
     } catch (error) {
       console.log(error.message);
       setLoader(false);
